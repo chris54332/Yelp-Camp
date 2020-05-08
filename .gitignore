@@ -1,0 +1,8 @@
+.vscode
+.vs
+testing-files
+azure-pipelines.yml
+run-commentaries.js
+run-securities.js
+data-parser-securities.js
+data-parser-commentaries.js
