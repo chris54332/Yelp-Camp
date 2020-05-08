@@ -1,0 +1,23 @@
+<%- include ('../partials/header') %>
+
+<h1 style="text-align: center;">Create a new sandwich</h1>
+<div style="width: 30%; margin:25px auto;">
+    <form action="/sandwiches" method="POST" id="new-sandwich">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="name" name="newSandwich[name]" id="form-el">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="image url" name="newSandwich[image]" id="form-el">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="description" name="newSandwich[description]" id="form-el">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+        </div>
+    </form>
+    <a href="/sandwiches">
+    <  Go back!</a>
+</div>
+
+<%- include ('../partials/footer') %>        

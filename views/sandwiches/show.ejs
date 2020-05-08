@@ -1,0 +1,20 @@
+<%- include ('../partials/header') %>
+
+<h1><%=sandwich.name%></h1>
+<img src="<%=sandwich.image%>" alt="">
+<p><%=sandwich.description%></p>
+<% sandwich.comments.forEach((comment)=>{ %>
+    <p><strong><%=comment.author %></strong> - <%=comment.text%></p>
+<%})%>
+<a href="/sandwiches">
+    <  Go back!</a>
+    <form action="/sandwiches/<%= sandwich._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    <form action="/sandwiches/<%= sandwich._id %>/edit" method="GET">
+        <button class="btn btn-info">Edit</button>
+    </form>
+    <form action="/sandwiches/<%= sandwich._id %>/comments/new" method="GET">
+        <button class="btn btn-primary">Add a comment</button>
+    </form>
+<%- include ('../partials/footer') %>

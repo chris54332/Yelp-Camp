@@ -1,0 +1,43 @@
+<%- include ('./partials/header') %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <form action="/upload" method="post" enctype="multipart/form-data" id="pdf-form">
+        <div class="form-group" style="margin-top: 2em;">
+          <input class="btn btn-default" type="file" name="fileToUpload" id="pdf-input" multiple>
+          </input>
+        </div>
+        <div class="radio" style="margin: 1em">
+          <p>Radio buttons:</p>
+          <label for="security"><input type="radio" id="security" name = "doc-type" value = "securities">
+          radio1
+          </label>
+          <label for="commentary"><input type="radio" id="commentary" name = "doc-type" value="commentaries">
+          radio2
+          </label>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="processingButton" class="btn btn-info">Submit form</button>
+        </div>
+      </form>
+      <div id="file-download"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col" style="max-height: 50%">
+      <ul id='file-list-display' class="list-group overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" 
+      style="width: auto; max-width: 70em; min-width:20em;height: auto;max-height: 30vh;" >
+      </ul>
+    </div>
+  </div>
+
+</div>
+  
+<script type="text/javascript" src="js/script.js">
+</script>
+
+<%- include ('./partials/footer') %>
