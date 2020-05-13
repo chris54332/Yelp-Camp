@@ -4,14 +4,14 @@ let mongoose = require("mongoose"),
 
 let data = [
     {
-        name: "burger",
+        name: "Classic Burger",
         image: "https://cdn.cheapism.com/images/Potato_Chip_Burger.max-420x243.jpg",
-        description: "yes blasdald"
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus, justo vel luctus posuere, nulla ante elementum nisi, nec aliquet nunc ligula quis mauris. Quisque semper efficitur aliquet. Aliquam sagittis risus sed urna tempus, quis pretium nisl lobortis."
     },
     {
-        name: "chicken",
+        name: "Italian Chicken",
         image: "https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_412,h_232/v1/img/recipes/39/82/46/picWl8fuX.jpg",
-        description: "yes blasdasdald"
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus, justo vel luctus posuere, nulla ante elementum nisi, nec aliquet nunc ligula quis mauris. Quisque semper efficitur aliquet. Aliquam sagittis risus sed urna tempus, quis pretium nisl lobortis."
     }
 ];
 

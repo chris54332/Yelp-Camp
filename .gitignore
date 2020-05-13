@@ -1,5 +1,6 @@
 .vscode
 .vs
+node_modules
 testing-files
 azure-pipelines.yml
 run-commentaries.js
