@@ -29,18 +29,7 @@ function seedDB(){
                 }else{
                     // create a comment
                     console.log("added a sandwich");
-                    Comment.create({
-                        text: "it's pretty tasty",
-                        author: "Homer"
-                    },(err, comment)=>{
-                        if(err){
-                            console.log(err);
-                        }else{
-                            sandwich.comments.push(comment);
-                            sandwich.save();
-                            console.log("added a comment");
-                        }
-                    })
+                    sandwich.save();
                 }
             });
     });

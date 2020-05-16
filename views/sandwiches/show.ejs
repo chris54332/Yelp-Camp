@@ -42,7 +42,7 @@
                 <% sandwich.comments.forEach((comment)=>{ %>
                     <div class="row">
                             <div class="col-md-9">
-                                <strong><%=comment.author %></strong>
+                                <strong><%=comment.author.username %></strong>
                                 <span class="pull-right">10 days ago</span>
                                 <p> <%=comment.text%></p>
                             </div>
