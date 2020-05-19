@@ -19,11 +19,8 @@ let methodOverride = require("method-override"),
 
 const URI = "mongodb+srv://admin:pass@cluster0-v7x25.mongodb.net/test?retryWrites=true&w=majority";
 
-try {
-    await mongoose.connect(URI, { useNewUrlParser: true });
-  } catch (error) {
-    console.log(error);
-  }
+ mongoose.connect(URI, { useNewUrlParser: true });
+ 
 app = express();
 
 app.set(express.static("public"));
