@@ -44,7 +44,6 @@ Custom Enhancements
 Built with
 Front-end
 
-    Google Fonts
     Font Awesome
     Bootstrap 4
 
