@@ -7,7 +7,7 @@ let methodOverride = require("method-override"),
     Campground = require("./models/campground"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
-    seedDB = require("./seeds"),
+    // seedDB = require("./seeds"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
 
-seedDB(); //seed the database
+// seedDB(); //seed the database
 
 //PASSPORT CONFIG
 app.use(require("express-session")({
