@@ -7,7 +7,7 @@ let methodOverride = require("method-override"),
     Campground = require("./models/campground"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
-    // seedDB = require("./seeds"),
+    seedDB = require("./seeds"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
@@ -17,7 +17,8 @@ let methodOverride = require("method-override"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect('mongodb://localhost:27017/danneys_db_main', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://admin:pass@cluster0-v7x25.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+// const uri = "mongodb+srv://admin:pass@cluster0-v7x25.mongodb.net/test?retryWrites=true&w=majority";
 
 app = express();
 
