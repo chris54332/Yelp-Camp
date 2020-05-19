@@ -1,35 +1,42 @@
 let mongoose = require("mongoose"),
-    Sandwich = require("./models/sandwich");
+    Campground = require("./models/campground"),
     Comment  = require("./models/comment");
 
-let data = [
+let campgroundData = [
     {
-        name: "Classic Burger",
-        image: "https://cdn.cheapism.com/images/Potato_Chip_Burger.max-420x243.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus, justo vel luctus posuere, nulla ante elementum nisi, nec aliquet nunc ligula quis mauris. Quisque semper efficitur aliquet. Aliquam sagittis risus sed urna tempus, quis pretium nisl lobortis."
+      name: 'Forest',
+      image: 'https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/2018/europeslostf.jpg',
+      description: 'This is a forest campground',
+      author: {
+        username: 'Some Good Guy'
+      },
+      created: Date.now()
     },
     {
-        name: "Italian Chicken",
-        image: "https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_412,h_232/v1/img/recipes/39/82/46/picWl8fuX.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus, justo vel luctus posuere, nulla ante elementum nisi, nec aliquet nunc ligula quis mauris. Quisque semper efficitur aliquet. Aliquam sagittis risus sed urna tempus, quis pretium nisl lobortis."
+      name: 'Plain',
+      image: 'https://media.nationalgeographic.org/assets/photos/000/255/25557.jpg',
+      description: 'This is a plain campground',
+      author: {
+        username: 'Some Good Guy'
+      },
+      created: Date.now()
     }
-];
-
+  ];
 function seedDB(){
-    Sandwich.remove({}, (err)=>{
+    Campground.remove({}, (err)=>{
         if(err){
             console.log(err);
         }
         console.log("removed the data");
     });
-    data.forEach((seed)=>{
-        Sandwich.create(seed,(err, sandwich)=>{
+    campgroundData.forEach((seed)=>{
+        Campground.create(seed,(err, campground)=>{
                 if(err){
                     console.log("error creating model: " + error);
                 }else{
                     // create a comment
-                    console.log("added a sandwich");
-                    sandwich.save();
+                    console.log("added a campground");
+                    campground.save();
                 }
             });
     });

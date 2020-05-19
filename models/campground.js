@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 
-let sandwichSchema = new mongoose.Schema({
+let campgroundSchema = new mongoose.Schema({
     name:   String,
     image:  String,
     description: String,
@@ -9,7 +9,9 @@ let sandwichSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
         }
-    ]
+    ],
+    price: Number,
+    created: Number
 });
 
-module.exports = mongoose.model('Sandwich', sandwichSchema);
+module.exports = mongoose.model('Campground', campgroundSchema);

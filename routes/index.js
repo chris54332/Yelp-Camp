@@ -3,9 +3,11 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 
-//INDEX
-router.get('/',(req,res)=>{res.redirect('/sandwiches');}); 
-router.get("/home",(req,res)=>{res.render("index");});
+
+// LANDING PAGE
+router.get("/", function(req, res){
+    res.render("landing");
+});
 
 // =================
 //Auth routes
@@ -21,32 +23,41 @@ router.post("/register",(req,res)=>{
             return res.render('register');
         }
         passport.authenticate("local")(req,res,()=>{
-            res.redirect("/sandwiches");
+            req.flash('green', 'Signed up successfully. Welcome ' + req.body.username + '!');
+            res.redirect("/campgrounds");
         });
     })
 })
 //handling log in
 router.get("/login", (req,res)=>{
     res.render("login");
-})
-router.post("/login", passport.authenticate("local",
-    {
-        successRedirect: "/sandwiches",
-        failureRedirect: "/login"
-    }),(req,res)=>{
+});
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+      req.flash('red', err);
+      res.redirect('/login');
+    }
+    if (!user) {
+      req.flash('red', 'Invalid username or password.');
+      res.redirect('/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        req.flash('red', 'Oops login failed, please come back later.');
+        res.redirect('/login');
+      }
+      req.flash('green', 'Logged in successfully. Welcome ' + req.body.username + '!');
+      res.redirect('/campgrounds');
+    });
+  })(req, res, next);
 })
 
 router.get("/logout", (req, res)=>{
     req.logout();
-    res.redirect("/sandwiches");
+    req.flash('green', 'Logged out successfully. See you next time ' + req.body.username + '!');
+    res.redirect("/campgrounds");
 })
 
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }else{
-        res.redirect("/login");    
-    }
-}
 
 module.exports = router;
