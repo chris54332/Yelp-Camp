@@ -1,5 +1,5 @@
 {
-  "name": "danneys",
+  "name": "v1",
   "version": "1.0.0",
   "description": "YelpCamp is a Node.js web application with RESTful routing",
   "main": "app.js",
