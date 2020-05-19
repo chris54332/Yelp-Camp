@@ -17,8 +17,13 @@ let methodOverride = require("method-override"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect('mongodb://admin:pass@cluster0-shard-00-00-v7x25.mongodb.net:27017,cluster0-shard-00-01-v7x25.mongodb.net:27017,cluster0-shard-00-02-v7x25.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+const URI = "mongodb+srv://admin:pass@cluster0-v7x25.mongodb.net/test?retryWrites=true&w=majority";
 
+try {
+    await mongoose.connect(URI, { useNewUrlParser: true });
+  } catch (error) {
+    console.log(error);
+  }
 app = express();
 
 app.set(express.static("public"));
