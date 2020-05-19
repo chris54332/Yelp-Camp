@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'build script executed'"
+    "build": "echo 'build script executed'",
+    "start": "node app.js"
   },
   "author": "Cristian Dumitrana",
   "license": "ISC"
